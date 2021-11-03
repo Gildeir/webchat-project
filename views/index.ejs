@@ -8,29 +8,40 @@
 
 <body>
   <main>
-    <div>
-      <form id="nickname-input-form" action="">
-        <input id="input-nickname" data-testid="nickname-box" autocomplete="off" placeholder="nickname" value="" />
-        <button type="submit" data-testid="nickname-button">SAVE</button>
-      </form>
+    <div class="main">
+      <div class="container" class="online">
+        <div>
+          <form id="nickname-input-form" action="">
+            <input id="input-nickname" data-testid="nickname-box" autocomplete="off" placeholder="nickname" value="" />
+            <button type="submit" data-testid="nickname-button">SAVE</button>
+          </form>
+        </div>
+
+        <section class="online-container">
+          <div>Usuários online</div>
+            <div class="online-people">
+              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+
+            </div>
+            <ul id="online-users-list"></ul>
+        </section>
     </div>
 
-    <section class="usuariosOnline">
-      <div>Usuários online</div>
-        <div>
-          <ul id="online-users-list"></ul>
-        </div>
-    </section>
-
-    <section class=chat>
-      <div>Mensagens</div>
-      <ul class="messages"></ul>
-    </section>
-    <div>    
-    <form id="message-input-form" action="">
-      <input type="text" data-testid="message-box" id="messageInput" autocomplete="off" placeholder="enter the message" />
-      <button type="submit" data-testid="send-button">SEND</button>
-    </form>
+    <div class="container" class="messages">
+      <section class=chat>
+        <div>Mensagens</div>
+        <ul class="messages"></ul>
+        <form id="message-input-form" action="">
+         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+          <input type="text" data-testid="message-box" id="messageInput" autocomplete="off" placeholder="enter the message" />
+          <button type="submit" data-testid="send-button">SEND</button>
+        </form>
+      </section>
+      <div> 
+    </div>
+      </div>
     </div>
   </main>
 

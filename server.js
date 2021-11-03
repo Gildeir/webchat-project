@@ -25,10 +25,6 @@ app.use(express.static(`${__dirname}/views`));
 
 require('./sockets/chat')(io);
 
-// app.get('/', (_req, res) => {
-//   res.status(200).json('Hello, World!');
-// });
-
 app.get('/', (_req, res) => {
   // res.sendFile(`${__dirname}/public/chat.html`);
   res.status(200).render('index');

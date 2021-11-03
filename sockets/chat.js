@@ -1,8 +1,8 @@
-const date = require('../useful/date');
+// const date = require('../useful/date');
 const { addingMessage } = require('../models/messageModel');
 const { getAll } = require('../models/messageModel');
 
-const currentDate = date();
+// const currentDate = date();
 const onlineUsers = [];
 
   const removeOnlineUsers = (socketId) => {
@@ -31,7 +31,7 @@ const updateNickname = (socketId, newNickname, io) => {
 
 const getAllMessages = (socket, allMessagesFromBd) => {
    const messages = allMessagesFromBd
-    .map((message) => `${currentDate} - ${message.nickname}: ${message.message}`);
+    .map((message) => `${message.nickname}: ${message.message}`);
   socket.emit('messageList', messages);
   return messages;
 };
@@ -49,8 +49,8 @@ module.exports = (io) => io.on('connection', async (socket) => {
   getAllMessages(socket, allMessagesFromBd);
   
   socket.on('message', async ({ chatMessage, nickname }) => {
-    await addingMessage(chatMessage, nickname, currentDate);
-    io.emit('message', `${currentDate} - ${nickname}: ${chatMessage}`);
+    await addingMessage(chatMessage, nickname);
+    io.emit('message', `${nickname}: ${chatMessage}`);
   });
 
   socket.on('disconnect', () => { disconnectFunc(io, socket); });
